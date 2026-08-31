@@ -1,13 +1,18 @@
 // src/components/DevLabGallery.jsx
 import React from "react";
 
+// 1. นำเข้าไฟล์ภาพจาก src/assets เข้ามาก่อน
+import findMyCarrotImg from "../assets/findmycarrot.png";
+import pokemonImg from "../assets/polemon.png";
+import flappyBirdImg from "../assets/flappybird.png";
+
 export const DevLabGallery = ({ mode }) => {
   const devWorks = [
     {
       id: 1,
       title: "Find My Carrot (JavaScript)",
       category: "CLI LOGIC & GAMEPLAY",
-      image: "/src/assets/findmycarrot.png",
+      image: findMyCarrotImg, // 2. ใช้ตัวแปรภาพที่ import เข้ามา
       description:
         "Interactive console-based game built with core JavaScript, focusing on coordinate logic, loops, and conditional event handling.",
     },
@@ -15,7 +20,7 @@ export const DevLabGallery = ({ mode }) => {
       id: 2,
       title: "Castle Room Pokemon",
       category: "REACT STATE & HOOKS",
-      image: "/src/assets/polemon.png",
+      image: pokemonImg, // ใช้ตัวแปร polemon
       description:
         "Practice project mastering useEffect, useState, and component props management through nested nested UI rooms.",
     },
@@ -23,7 +28,7 @@ export const DevLabGallery = ({ mode }) => {
       id: 3,
       title: "JSD//13 Flappy Bird (Group Project)",
       category: "TEAM COLLABORATION & REACT",
-      image: "/src/assets/flappybird.png",
+      image: flappyBirdImg, // ใช้ตัวแปร flappybird
       description:
         "Collaborative team game project. Engineered the character selection screen and integrated modular components with teammates.",
     },

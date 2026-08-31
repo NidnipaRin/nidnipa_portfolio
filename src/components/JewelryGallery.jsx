@@ -2,6 +2,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// นำเข้าไฟล์ภาพจาก src/assets
+import jew01Img from "../assets/jew01.png";
+import jew02Img from "../assets/jew02.png";
+import jew03Img from "../assets/jew03.png";
+
 export const JewelryGallery = ({ mode }) => {
   const isJewelry = mode === "jewelry";
 
@@ -12,7 +17,7 @@ export const JewelryGallery = ({ mode }) => {
       id: 1,
       title: "Ruby & Diamond Floral Earrings",
       category: "FINE JEWELRY DESIGN",
-      image: "/src/assets/jew01.png",
+      image: jew01Img,
       description:
         "Vibrant custom ruby and marquee diamond cluster earrings focusing on stone symmetry and prong precision.",
     },
@@ -20,7 +25,7 @@ export const JewelryGallery = ({ mode }) => {
       id: 2,
       title: "Diamond Cluster Necklace",
       category: "HIGH-END DETAILING",
-      image: "/src/assets/jew02.png",
+      image: jew02Img,
       description:
         "Intricate high-end diamond layout inspired by classical atelier blueprint standards.",
     },
@@ -28,7 +33,7 @@ export const JewelryGallery = ({ mode }) => {
       id: 3,
       title: "Emerald Drop Statement Earrings",
       category: "FINE JEWELRY DESIGN",
-      image: "/src/assets/jew03.png",
+      image: jew03Img,
       description:
         "Precision-driven emerald alignment paired with brilliant diamonds, reflecting structural attention to detail.",
     },
@@ -38,7 +43,7 @@ export const JewelryGallery = ({ mode }) => {
     <motion.section
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.15 }} // เล่นแอนิเมชันทุกครั้งที่เลื่อนมาเจอ
+      viewport={{ once: false, amount: 0.15 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="py-12 px-6 max-w-6xl mx-auto"
     >
@@ -58,7 +63,7 @@ export const JewelryGallery = ({ mode }) => {
             key={work.id}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }} // เล่นแอนิเมชันทุกครั้งที่เลื่อนมาเจอเช่นกัน
+            viewport={{ once: false }}
             transition={{ duration: 0.5, delay: index * 0.15 }}
             className="rounded-xl overflow-hidden border border-[#633A2C]/20 bg-[#E0D6B8]/50 backdrop-blur-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between"
           >
