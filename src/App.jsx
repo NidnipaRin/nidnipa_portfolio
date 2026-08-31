@@ -11,6 +11,10 @@ import { ExperienceSection } from "./components/ExperienceSection";
 import { ProjectModal } from "./components/ProjectModal";
 import { CookieWidget } from "./components/CookieWidget";
 import { Footer } from "./components/Footer";
+import { ScrollProgress } from "./components/ScrollProgress";
+import { ScrollReveal } from "./components/ScrollReveal";
+import { BackgroundSparkles } from "./components/BackgroundSparkles";
+import { OnlineCVPage } from "./components/OnlineCVPage"; // นำเข้าหน้า Online CV ที่เพิ่งสร้าง
 
 import {
   personalInfo,
@@ -25,18 +29,14 @@ import bgDev from "./assets/bg-dev.png";
 export default function App() {
   const [mode, setMode] = useState("dev");
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentView, setCurrentView] = useState("portfolio"); // "portfolio" หรือ "resume"
 
-  const handleSelectProject = (project) => {
-    setSelectedProject(project);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedProject(null);
-  };
+  const handleSelectProject = (project) => setSelectedProject(project);
+  const handleCloseModal = () => setSelectedProject(null);
 
   return (
     <div
-      className={`min-h-screen transition-all duration-500 font-sans flex flex-col justify-between bg-cover bg-center bg-fixed ${
+      className={`min-h-screen transition-all duration-500 font-sans flex flex-col justify-between bg-cover bg-center bg-fixed relative ${
         mode === "jewelry" ? "text-[#4A2E2B]" : "text-[#F3E8FF]"
       }`}
       style={{
@@ -44,46 +44,73 @@ export default function App() {
           mode === "jewelry" ? `url(${bgJewelry})` : `url(${bgDev})`,
       }}
     >
-      <div className="min-h-screen flex flex-col justify-between">
-        <div>
-          <Navbar personalInfo={personalInfo} mode={mode} setMode={setMode} />
+      <ScrollProgress mode={mode} />
+      <BackgroundSparkles mode={mode} />
 
-          <main className="space-y-12 pb-16">
-            <section id="hero">
-              <HeroSection personalInfo={personalInfo} mode={mode} />
-            </section>
+      <div className="min-h-screen flex flex-col justify-between relative z-10">
+        {currentView === "resume" ? (
+          // แสดงหน้า Online CV เต็มรูปแบบ
+          <OnlineCVPage
+            mode={mode}
+            onBack={() => setCurrentView("portfolio")}
+          />
+        ) : (
+          // แสดงหน้า Portfolio ปกติ
+          <div>
+            <Navbar personalInfo={personalInfo} mode={mode} setMode={setMode} />
 
-            <section id="about">
-              <AboutSection personalInfo={personalInfo} mode={mode} />
-            </section>
+            <main className="space-y-12 pb-16">
+              <section id="hero">
+                <HeroSection
+                  personalInfo={personalInfo}
+                  mode={mode}
+                  onOpenCV={() => setCurrentView("resume")} // ส่งฟังก์ชันเปลี่ยนหน้าไปที่ปุ่ม View Full CV
+                />
+              </section>
 
-            <section id="skills">
-              <SkillsSection skillsData={skillsData} mode={mode} />
-            </section>
+              <ScrollReveal>
+                <section id="about">
+                  <AboutSection personalInfo={personalInfo} mode={mode} />
+                </section>
+              </ScrollReveal>
 
-            <section id="projects">
-              <ProjectsSection
-                projectsData={projectsData}
-                onSelectProject={handleSelectProject}
-                mode={mode}
-              />
-            </section>
+              <ScrollReveal>
+                <section id="skills">
+                  <SkillsSection skillsData={skillsData} mode={mode} />
+                </section>
+              </ScrollReveal>
 
-            {/* สลับแสดงผลในตำแหน่งเดียวกันเป๊ะตามโหมด */}
-            {mode === "jewelry" ? (
-              <JewelryGallery mode={mode} />
-            ) : (
-              <DevLabGallery mode={mode} />
-            )}
+              <ScrollReveal>
+                <section id="projects">
+                  <ProjectsSection
+                    projectsData={projectsData}
+                    onSelectProject={handleSelectProject}
+                    mode={mode}
+                  />
+                </section>
+              </ScrollReveal>
 
-            <section id="experience">
-              <ExperienceSection experienceData={experienceData} mode={mode} />
-            </section>
-          </main>
-        </div>
+              {mode === "jewelry" ? (
+                <JewelryGallery mode={mode} />
+              ) : (
+                <ScrollReveal>
+                  <DevLabGallery mode={mode} />
+                </ScrollReveal>
+              )}
+
+              <ScrollReveal>
+                <section id="experience">
+                  <ExperienceSection
+                    experienceData={experienceData}
+                    mode={mode}
+                  />
+                </section>
+              </ScrollReveal>
+            </main>
+          </div>
+        )}
 
         <CookieWidget mode={mode} />
-
         <Footer personalInfo={personalInfo} mode={mode} />
 
         {selectedProject && (
