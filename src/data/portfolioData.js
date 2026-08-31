@@ -11,15 +11,14 @@ export const personalInfo = {
   email: "rarin.nidnipa@gmail.com",
 
   heroTitle: {
-    jewelry:
-      "Applying Fine Jewelry Precision to Full-Stack Software Engineering",
-    tech: "Building Scalable & High-Impact Web Applications with Clean Code",
+    jewelry: "9+ Years of Luxury Design Precision. Now Building with Code.",
+    tech: "From Luxury Design Precision to Software Engineering: Building Applications That Scale.",
   },
 
   heroSubtitle: {
     jewelry:
-      "Full-Stack Developer leveraging 9+ years of luxury design precision, high attention to detail, and user empathy to build exceptional digital products.",
-    tech: "Junior Software Developer trained in MERN stack, HTML5/CSS3, JavaScript, and React, focused on building responsive and maintainable web applications.",
+      "In Jewelry, 0.1mm matters. In Tech, every line of code counts. Full-Stack Developer leveraging high attention to detail and user empathy to build clean, reliable web applications.",
+    tech: "Full-Stack Developer trained in MERN stack, HTML5/CSS3, JavaScript, and React, focused on building responsive and maintainable web applications.",
   },
 
   tagline: "Crafting High-Impact Web Applications with Luxury Precision",

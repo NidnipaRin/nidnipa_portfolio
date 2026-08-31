@@ -4,8 +4,10 @@ import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
 import { SkillsSection } from "./components/SkillsSection";
-import { ExperienceSection } from "./components/ExperienceSection";
 import { ProjectsSection } from "./components/ProjectsSection";
+import { JewelryGallery } from "./components/JewelryGallery";
+import { DevLabGallery } from "./components/DevLabGallery";
+import { ExperienceSection } from "./components/ExperienceSection";
 import { ProjectModal } from "./components/ProjectModal";
 import { CookieWidget } from "./components/CookieWidget";
 import { Footer } from "./components/Footer";
@@ -21,7 +23,7 @@ import bgJewelry from "./assets/bg-jewelry.png";
 import bgDev from "./assets/bg-dev.png";
 
 export default function App() {
-  const [mode, setMode] = useState("jewelry");
+  const [mode, setMode] = useState("dev");
   const [selectedProject, setSelectedProject] = useState(null);
 
   const handleSelectProject = (project) => {
@@ -42,7 +44,6 @@ export default function App() {
           mode === "jewelry" ? `url(${bgJewelry})` : `url(${bgDev})`,
       }}
     >
-      {/* 🔴 เอาชั้นสีทึบและ backdrop-blur ออก เหลือไว้แค่โครงสร้างจัดหน้าปกติ */}
       <div className="min-h-screen flex flex-col justify-between">
         <div>
           <Navbar personalInfo={personalInfo} mode={mode} setMode={setMode} />
@@ -67,6 +68,13 @@ export default function App() {
                 mode={mode}
               />
             </section>
+
+            {/* สลับแสดงผลในตำแหน่งเดียวกันเป๊ะตามโหมด */}
+            {mode === "jewelry" ? (
+              <JewelryGallery mode={mode} />
+            ) : (
+              <DevLabGallery mode={mode} />
+            )}
 
             <section id="experience">
               <ExperienceSection experienceData={experienceData} mode={mode} />

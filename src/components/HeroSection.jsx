@@ -27,9 +27,7 @@ export const HeroSection = ({ personalInfo, mode }) => {
             : "bg-slate-200 border border-slate-300 text-slate-700"
         }`}
       >
-        {isJewelry
-          ? "💎 Full-Stack Software Developer"
-          : "⚡ Full-Stack Software Developer"}
+        {isJewelry ? "💎 Full-Stack Developer" : "⚡ Full-Stack Developer"}
       </span>
 
       {/* Headline */}

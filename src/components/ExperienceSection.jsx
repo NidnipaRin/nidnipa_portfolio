@@ -14,13 +14,14 @@ export const ExperienceSection = (props) => {
           isJewelry ? "text-[#800000] font-serif" : "text-[#F472B6] font-mono"
         }`}
       >
-        {isJewelry ? "Professional Journey" : "Experience & Background"}
+        {isJewelry
+          ? "Professional Journey & Experience"
+          : "Experience & Background"}
       </h2>
 
       <div className="space-y-6">
         {Array.isArray(experiences) && experiences.length > 0 ? (
           experiences.map((exp, idx) => {
-            // ป้องกันกรณีตัว exp เองเป็น null หรือ undefined
             if (!exp) return null;
 
             return (
@@ -58,7 +59,6 @@ export const ExperienceSection = (props) => {
                   {exp.company || ""}
                 </p>
 
-                {/* ถ้ารายละเอียดเป็น Array ให้ map ออกมา แต่ถ้าเป็น String ให้แสดงตรงๆ */}
                 {Array.isArray(exp.details || exp.description) ? (
                   <ul className="list-disc list-inside text-xs leading-relaxed opacity-90 space-y-1">
                     {(exp.details || exp.description).map((item, itemIdx) => (

@@ -10,12 +10,9 @@ export const Navbar = ({ personalInfo, mode, setMode }) => {
         {/* Logo */}
         <a
           href="#hero"
-          className="font-bold text-xl tracking-wide text-brand-dark"
+          className="font-bold text-base md:text-lg tracking-wider text-brand-dark"
         >
-          NIDNIPA
-          <span className="text-brand-maroon">
-            {mode === "jewelry" ? ".CRAFT" : ".DEV"}
-          </span>
+          NIDNIPA KIATTIKUNNATHUM
         </a>
 
         {/* Toggle Mode Button (จุดขายหลัก!) */}

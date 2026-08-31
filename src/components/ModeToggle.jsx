@@ -12,17 +12,6 @@ export const ModeToggle = ({ mode, setMode }) => {
       }`}
     >
       <button
-        onClick={() => setMode("jewelry")}
-        className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 flex items-center gap-1.5 ${
-          isJewelry
-            ? "bg-[#800000] text-[#E0D6B8] shadow-sm font-bold"
-            : "text-slate-500 hover:text-slate-900"
-        }`}
-      >
-        💎 Jewelry Spec
-      </button>
-
-      <button
         onClick={() => setMode("tech")}
         className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 flex items-center gap-1.5 ${
           !isJewelry
@@ -30,7 +19,18 @@ export const ModeToggle = ({ mode, setMode }) => {
             : "text-[#633A2C] hover:text-[#800000]"
         }`}
       >
-        ⚡ Tech Spec
+        ⚡ Dev Mode
+      </button>
+
+      <button
+        onClick={() => setMode("jewelry")}
+        className={`px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 flex items-center gap-1.5 ${
+          isJewelry
+            ? "bg-[#800000] text-[#E0D6B8] shadow-sm font-bold"
+            : "text-slate-500 hover:text-slate-900"
+        }`}
+      >
+        💎 Designer Mode
       </button>
     </div>
   );
