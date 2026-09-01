@@ -21,9 +21,10 @@ export const personalInfo = {
     tech: "Full-Stack Developer trained in MERN stack, HTML5/CSS3, JavaScript, and React, focused on building responsive and maintainable web applications.",
   },
 
-  tagline: "Crafting High-Impact Web Applications with Luxury Precision",
+  tagline:
+    "Mastering Code: Beyond Design Precision. Building Scalable Solutions with Unwavering Determination.",
   summary:
-    "Results-driven Junior Software Developer skilled in JavaScript, React, Node.js, Express.js, and MongoDB from Generation Thailand Bootcamp. Blends strong software engineering fundamentals with 9+ years of professional experience in high-end jewelry design and luxury client management.",
+    "Full-Stack Developer trained in MERN stack, HTML5/CSS3, JavaScript, and React, focused on building responsive and maintainable web applications.",
 };
 
 export const skillsData = {
