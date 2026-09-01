@@ -1,9 +1,9 @@
+// src/components/SkillsSection.jsx
 import React from "react";
 
 export const SkillsSection = ({ skillsData, mode }) => {
   const isJewelry = mode === "jewelry";
 
-  // ป้องกัน Error หาก skillsData ไม่ได้ถูกส่งมา หรือไม่มีค่า
   const technicalSkills = skillsData?.technical || [];
   const softSkills = skillsData?.soft || [];
 
@@ -14,7 +14,7 @@ export const SkillsSection = ({ skillsData, mode }) => {
           isJewelry ? "text-[#800000] font-serif" : "text-[#F472B6] font-mono"
         }`}
       >
-        {isJewelry ? "Craftsmanship & Skills" : "Technical & Soft Skills"}
+        Technical & Soft Skills
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -55,7 +55,7 @@ export const SkillsSection = ({ skillsData, mode }) => {
           </div>
         </div>
 
-        {/* Soft Skills / Design Principles */}
+        {/* Soft Skills */}
         <div
           className={`p-6 rounded-2xl border transition-all ${
             isJewelry
@@ -63,6 +63,7 @@ export const SkillsSection = ({ skillsData, mode }) => {
               : "bg-[#1E112A]/80 border-[#C084FC]/30 text-[#F3E8FF] shadow-[0_0_15px_rgba(192,132,252,0.1)]"
           }`}
         >
+          {/* 2. เปลี่ยนหัวข้อกล่องขวาให้เป็น "Soft Skills" เหมือนกันทั้งสองโหมด */}
           <h3
             className={`text-xl font-bold mb-4 ${
               isJewelry
@@ -70,7 +71,7 @@ export const SkillsSection = ({ skillsData, mode }) => {
                 : "text-[#F472B6] font-mono"
             }`}
           >
-            {isJewelry ? "Design Philosophy" : "Soft Skills"}
+            Soft Skills
           </h3>
           <div className="flex flex-wrap gap-2">
             {softSkills.length > 0 ? (

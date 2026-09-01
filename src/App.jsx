@@ -14,7 +14,7 @@ import { Footer } from "./components/Footer";
 import { ScrollProgress } from "./components/ScrollProgress";
 import { ScrollReveal } from "./components/ScrollReveal";
 import { BackgroundSparkles } from "./components/BackgroundSparkles";
-import { OnlineCVPage } from "./components/OnlineCVPage"; // นำเข้าหน้า Online CV ที่เพิ่งสร้าง
+import { OnlineCVPage } from "./components/OnlineCVPage";
 
 import {
   personalInfo,
@@ -29,7 +29,7 @@ import bgDev from "./assets/bg-dev.png";
 export default function App() {
   const [mode, setMode] = useState("dev");
   const [selectedProject, setSelectedProject] = useState(null);
-  const [currentView, setCurrentView] = useState("portfolio"); // "portfolio" หรือ "resume"
+  const [currentView, setCurrentView] = useState("portfolio");
 
   const handleSelectProject = (project) => setSelectedProject(project);
   const handleCloseModal = () => setSelectedProject(null);
@@ -49,13 +49,11 @@ export default function App() {
 
       <div className="min-h-screen flex flex-col justify-between relative z-10">
         {currentView === "resume" ? (
-          // แสดงหน้า Online CV เต็มรูปแบบ
           <OnlineCVPage
             mode={mode}
             onBack={() => setCurrentView("portfolio")}
           />
         ) : (
-          // แสดงหน้า Portfolio ปกติ
           <div>
             <Navbar personalInfo={personalInfo} mode={mode} setMode={setMode} />
 
@@ -64,7 +62,7 @@ export default function App() {
                 <HeroSection
                   personalInfo={personalInfo}
                   mode={mode}
-                  onOpenCV={() => setCurrentView("resume")} // ส่งฟังก์ชันเปลี่ยนหน้าไปที่ปุ่ม View Full CV
+                  onOpenCV={() => setCurrentView("resume")}
                 />
               </section>
 
@@ -91,10 +89,13 @@ export default function App() {
               </ScrollReveal>
 
               {mode === "jewelry" ? (
-                <JewelryGallery mode={mode} />
+                <JewelryGallery mode={mode} onOpenModal={handleSelectProject} />
               ) : (
                 <ScrollReveal>
-                  <DevLabGallery mode={mode} />
+                  <DevLabGallery
+                    mode={mode}
+                    onOpenModal={handleSelectProject}
+                  />
                 </ScrollReveal>
               )}
 

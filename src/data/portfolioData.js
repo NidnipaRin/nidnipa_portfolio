@@ -12,7 +12,7 @@ export const personalInfo = {
 
   heroTitle: {
     jewelry: "9+ Years of Luxury Design Precision. Now Building with Code.",
-    tech: "From Luxury Design Precision to Software Engineering: Building Applications That Scale.",
+    tech: "Mastering Code: Beyond Design Precision. Building Scalable Solutions with Unwavering Determination.",
   },
 
   heroSubtitle: {
@@ -61,6 +61,7 @@ export const projectsData = [
   {
     id: "cookie-clicker",
     title: "Cookie Clicker Game",
+    category: "REACT GAME & 8-BIT THEME",
     shortDescription:
       "Interactive browser-based game built with React. Features custom state management, auto-clickers, and upgrade logic.",
     fullDescription:
@@ -70,6 +71,18 @@ export const projectsData = [
     githubUrl: "https://github.com/NidnipaRin/cookieclicker",
     liveDemoUrl: "https://cookieclicker-eta-two.vercel.app",
     contributors: "Solo Project",
+
+    designPhilosophy:
+      "An interactive, nostalgic 8-bit themed idle baking simulator engineered to test core React state management while blending playful gamification with interactive dessert recipe milestones.",
+    implementation: [
+      "Engineered robust state tracking using useState and useEffect hooks to manage real-time click counters, automatic baking ticks, and progressive speed increments.",
+      "Developed an incremental automation mechanism that scales up the baking rate dynamically as players reach specific click thresholds.",
+      "Programmed a milestone reward system that unlocks exclusive, delicious pastry and bread recipes once the player hits the target milestone of 1,000 clicks.",
+      "Implemented a pixel-art, 8-bit inspired aesthetic through custom Tailwind CSS styling and themed UI components to create an immersive retro bakery atmosphere.",
+    ],
+    keyTakeaway:
+      "Mastered complex asynchronous interval handling, state-driven UI rendering, and gamification logic within a scalable React architecture.",
+
     designPerspective:
       "Designed with a focus on tactile feedback and rewarding micro-interactions, providing users with a delightful and engaging visual experience.",
     techPerspective:
@@ -78,6 +91,7 @@ export const projectsData = [
   {
     id: "bakery-store",
     title: "Artisanal Bakery E-Commerce",
+    category: "FRONT-END WEB DEVELOPMENT",
     shortDescription:
       "A visually engaging food and dessert showcase website emphasizing sleek UI/UX and seamless item navigation.",
     fullDescription:
@@ -87,6 +101,18 @@ export const projectsData = [
     githubUrl: "https://github.com/NidnipaRin/myecommerce",
     liveDemoUrl: "https://myecommerce-puce.vercel.app/",
     contributors: "Solo Project",
+
+    designPhilosophy:
+      "A cozy, visually immersive storefront designed to showcase artisanal desserts with warm storytelling, emphasizing clean layout hierarchy and frictionless item navigation.",
+    implementation: [
+      "Structured a responsive, multi-page layout using semantic HTML5 and modular CSS3 architecture for fast-loading, clean component separation.",
+      "Implemented interactive UI components and smooth navigation loops enabling users to effortlessly explore menu items, brand stories, and ordering options.",
+      "Integrated responsive grid systems and media styling to showcase high-end bakery photography and promotional banners across all screen sizes.",
+      "Optimized user flow and interactive call-to-action buttons (such as 'Discover our menu') to replicate a warm, inviting digital storefront experience.",
+    ],
+    keyTakeaway:
+      "Perfected responsive web design principles and front-end layout composition, translating brand identity into a seamless, production-ready e-commerce interface.",
+
     designPerspective:
       "Focused on aesthetic composition, warm color harmony, and appetizing visual hierarchy to drive high user engagement and seamless navigation.",
     techPerspective:
